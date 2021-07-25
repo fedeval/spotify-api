@@ -13,6 +13,5 @@ def hello_world():
 @app.route('/get-album/<id>')
 def get_album(id):
   headers = {'Authorization': f'Bearer {authorize()}'}
-  print(f'{base_url}/v1/albums/{id}')
   res = requests.get(f'{base_url}/v1/albums/{id}', headers=headers)
   return res.json()
